@@ -10,6 +10,7 @@
 问：子线程 setDaemon 之后，子线程退出了，主线程会怎样？
 答：主线程不受影响
 
+setDaemon 到底是什么作用呢？
 
 """
 from threading import Thread
@@ -17,21 +18,21 @@ from time import sleep
 
 
 def func():
-    i = 0
     for i in range(5):
-        print(i)
+        print("child", i)
         sleep(0.5)
+    print("child thread finished")
 
 
 if __name__ == '__main__':
-    t =Thread(target=func)
+    t = Thread(target=func)
     t.setDaemon(True)
     t.start()
 
     i = 0
     while True:
         i += 1
-        print("main thread %d" % i)
+        print("main", i)
         sleep(0.5)
 
     print("main thread finished")

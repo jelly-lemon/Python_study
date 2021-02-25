@@ -27,6 +27,7 @@ class Example(QMainWindow):
 
         # QWidget 带不带 self 的区别（也就是设置 parent 与否的区别？）？
         # 其中参数 parent 指向父窗口，如果这个参数为 0，则窗口就成为一个顶级窗口（什么叫顶级窗口？最前面的窗口？）
+        # 顶级窗口的反义词？
         main_widget = QWidget()
 
         title = QLabel('Title')
