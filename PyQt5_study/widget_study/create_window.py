@@ -1,4 +1,6 @@
-
+"""
+创建一个窗口并显示
+"""
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
 

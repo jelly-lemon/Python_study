@@ -14,9 +14,9 @@ class Example(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setGeometry(300, 300, 300, 220)
+        self.setGeometry(300, 300, 300, 220)    # 窗口起点和大小
         self.setWindowTitle("Icon")
-        self.setWindowIcon(QIcon('../img/logo.png'))
+        self.setWindowIcon(QIcon('../../img/logo.png'))
 
         self.show()
 

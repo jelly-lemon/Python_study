@@ -1,4 +1,6 @@
 """
+想在子线程中启动主线程中的 timer
+
 问题：子线程不能 start 主线程的 timer ？
 
 详细描述：主线程创建两个一个 timer 实例，子线程想要启动 timer，但是实验表明无法启动
@@ -29,8 +31,7 @@ Qt uses the timer's thread affinity to determine which thread will emit the time
 Because of this, you must start and stop the timer in its thread;
 it is not possible to start a timer from another thread.
 
-没有读懂。timer's thread 什么意思？
-timeout 信号是谁发出的？
+Qt 使用 “计时器的关联线程” 来决定哪个线程发出 timeout() 信号。读不懂
 
 解决办法：用 Qt 提供的 Signal
 在主线程中，创建 signal，绑定函数；

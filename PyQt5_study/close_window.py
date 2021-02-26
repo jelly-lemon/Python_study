@@ -1,5 +1,5 @@
 """
-点击按钮关闭窗口
+点击自定义按钮关闭窗口
 """
 
 import sys
@@ -18,9 +18,8 @@ class Example(QWidget):
         qbtn = QPushButton('Quit', self)
         # TODO
         # clicked() 不是一个函数吗？能这样调？
-        # PyCharm 里面也不给提示啊
-        # quit() 也是也给函数
-        # 为什么可以直接在 函数名后面直接跟 connect 函数？
+        # quit() 也是函数
+        # 为什么可以直接在 函数名后面直接跟 connect 函数？不清楚背后是如何实现的
         qbtn.clicked.connect(QCoreApplication.instance().quit)
         qbtn.resize(qbtn.sizeHint())
         qbtn.move(50, 50)

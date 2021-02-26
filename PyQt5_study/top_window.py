@@ -1,3 +1,7 @@
+"""
+激活窗口，显示在最顶端（不是那种一直置于顶端）
+"""
+
 import sys
 
 from PyQt5.QtCore import Qt

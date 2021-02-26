@@ -8,14 +8,9 @@ class Example(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        # self.setWindowFlags(self.windowFlags() & ~Qt.WindowMaximizeButtonHint &
-        #                     ~Qt.WindowMinimizeButtonHint & Qt.FramelessWindowHint)
-        #
-        #
-        # self.setContentsMargins(0, 0, 0, 0)
-
         self.edit = QLineEdit()
         self.edit.setText("hello")
+
         self.setCentralWidget(self.edit)
 
         self.show()

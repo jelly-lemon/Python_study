@@ -1,11 +1,13 @@
 """
 鼠标放在按钮上，可以显示相关提示
+悬停提示
 """
 
 import sys
-# 为啥要加小括号？
+# 为啥要加小括号？不加也可以
 from PyQt5.QtWidgets import (QWidget, QToolTip, QPushButton, QApplication)
 from PyQt5.QtGui import QFont
+
 
 class Example(QWidget):
     def __init__(self):
@@ -21,13 +23,14 @@ class Example(QWidget):
         # 创建一个 button，也设置一个提示
         btn = QPushButton('Button', self)
         btn.setToolTip('This is a <b>QPushButton</b> widget')
-        # 既然使用默认尺寸，还有必要设置一下为默认尺寸吗？
+        # 既然使用默认尺寸，还有必要设置一下为默认尺寸吗？经过测试，设不设置都一样，本来就用默认值嘛
         btn.resize(btn.sizeHint())
 
-        btn.move(50,50)
+        btn.move(50, 50)
         self.setGeometry(300, 300, 300, 200)
         self.setWindowTitle("Tooltips")
         self.show()
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

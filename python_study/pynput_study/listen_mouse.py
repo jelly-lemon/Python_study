@@ -18,12 +18,14 @@ def on_click(x, y, button, pressed):
 
 
 # 为什么滚动鼠标滑轮这个回调函数没有被执行呢？
+# 原来是参数 on_scroll 写错成 on_scorll 了
 def on_scroll(x, y, dx, dy):
     print('Scrolled {0} at {1}'.format('down' if dy < 0 else 'up', (x, y)))
 
+
 with mouse.Listener(on_move = on_move,
                     on_click = on_click,
-                    on_scorll = on_scroll) as listener:
+                    on_scroll = on_scroll) as listener:
     listener.join()
 
 print("test")
