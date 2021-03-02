@@ -1,3 +1,8 @@
 import os
 
-os.li
+try:
+    print("hello")
+except Exception:
+    pass
+else:
+    print("world")
