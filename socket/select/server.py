@@ -1,7 +1,16 @@
 """
 套接字分类：
-- 接受套接字
-- 连接套接字
+- 接受套接字 accept
+- 连接套接字 connection
+
+问：select 等到多少个事件才返回呢？只要有一个就返回？
+答：select 遍历传递进来的所有套接字，并返回所有出现的可读、可写或异常事件。
+如果没有事件，重新遍历。如果始终没有，超时返回。
+
+问：可写是如何判断的呢？
+答：建立连接即可写
+
+
 """
 import select
 import socket
@@ -31,16 +40,14 @@ outputs = []
 conn_dict = {}
 
 while inputs:
-    print('waiting for the next event')
+    print("-----------------------------")
     # 开始 select 监听
     # 第三个参数用来监听套接字是否出现异常（也就是有没有断开）
-    # TODO select 等到多少个才返回呢？只要有一个就返回？
-    # TODO 可写是如何判断的呢？
     readable, writable, exceptional = select.select(inputs, outputs, inputs)    # 阻塞
-
     # Handle inputs
     # 循环判断是否有客户端连接进来, 当有客户端连接进来时 select 将触发
     for s in readable:
+        print("readable", s)
         # 判断当前触发的是不是服务端对象, 当触发的对象是服务端对象时，说明有新客户端连接进来了
         if s is server:
             # 有新的客户端连接
@@ -75,6 +82,7 @@ while inputs:
                 del conn_dict[s]
 
     for s in writable:
+        print("writable", s)
         try:
             # 如果消息队列中有消息,从消息队列中获取要发送的消息
             message_queue = conn_dict.get(s)
@@ -103,6 +111,7 @@ while inputs:
 
 
     for s in exceptional:
+        print("exceptional", s)
         print('exception condition on', s.getpeername())
 
         # Stop listening for input on the connection
