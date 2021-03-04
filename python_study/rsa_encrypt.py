@@ -1,11 +1,9 @@
 """
 使用 rsa 模型进行简单地加密解密
-
-源代码参考：
-https://blog.csdn.net/whatday/article/details/97617461/
 """
 
 import rsa
+
 
 def rsaEncrypt(str):
     """
@@ -21,12 +19,13 @@ def rsaEncrypt(str):
     print("密钥：%s" % privkey)
 
     # 对明文编码
-    content = str.encode("utf-8")   # 对输入进来的字符串用 utf-8 进行编码，得到二进制编码
+    content = str.encode("utf-8")  # 对输入进来的字符串用 utf-8 进行编码，得到二进制编码
 
     # 公钥加密
     crypto = rsa.encrypt(content, pubkey)
 
     return crypto, privkey
+
 
 def rsaDecrypt(str, privkey):
     """
@@ -38,9 +37,10 @@ def rsaDecrypt(str, privkey):
     """
     # 私钥解密
     content = rsa.decrypt(str, privkey)
-    org_str = content.decode("utf-8")   # 对二进制进行解码，得到原始字符串
+    org_str = content.decode("utf-8")  # 对二进制进行解码，得到原始字符串
 
     return org_str
+
 
 if __name__ == '__main__':
     org_str = "hello"

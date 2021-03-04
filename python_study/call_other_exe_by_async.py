@@ -10,8 +10,6 @@ file_path = "D:/0-0-pycharm/Python_study/python_study/test_txt/a b.txt"
 p = subprocess.Popen('"%s" "%s"' % (player, file_path))
 
 
-
-
 # Check if process has completed
 if p.poll() is not None:
     ...

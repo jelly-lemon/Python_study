@@ -2,13 +2,12 @@
 获取 windows 默认程序
 
 注意：
-没有接口可以获取某一个文件夹下到底有多少个键值对
+没有接口可以获取某一个注册表文件夹下到底有多少个键值对
 
 在下面内容中提取文件名：
 "%ProgramFiles(x86)%\Windows Media Player\wmplayer.exe" /prefetch:6 /Open "%L"
 不能以空格作为分割，文件名可能有空格
 """
-import os
 import winreg
 
 def get_file_name(path):
@@ -29,8 +28,7 @@ if __name__ == '__main__':
                 print("name:", name, "value:", value,  "type:", type)
                 i += 1
         except Exception as e:
-            print(e)
-            print("over")
+            pass
 
         print(get_file_name(value))
 
