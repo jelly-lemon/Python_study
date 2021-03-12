@@ -1,4 +1,4 @@
-
+import json
 
 def test_1():
     """
@@ -37,6 +37,17 @@ def test_2():
     # print(dict(key_value))
 
 
+def test_3():
+    """
+    根据字符串创建字典
+    """
+    s = '{"name":"Lin", "gender":"male", "company": {"company_name": "nsfocus", "addr":"chengdu"}}'
+    j = json.loads(s)
+    j["hello"] = "world"
+    j.pop("name")
+    print(j)
+    print(type(j))
 
 
-test_2()
+
+
