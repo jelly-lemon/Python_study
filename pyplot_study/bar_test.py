@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 def test_1():
     bar_width = 0.09
     # 数组表示有多少个数据集
@@ -16,7 +15,6 @@ def test_1():
         start = (i+1) - data_width/2 + bar_width/2
         # x 是条状的中间点，不是起始点
         x = [start + j * (bar_width+space) for j in range(len(d))]
-
         b = plt.bar(x=x, height=d, width=bar_width)
 
 

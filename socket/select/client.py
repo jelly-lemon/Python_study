@@ -1,32 +1,37 @@
-# coding: utf-8
+"""
+socket 客户端
+"""
+
 import socket
 
+# 待发送数据
+import time
 
-messages = ['This is the message ', 'It will be sent ', 'in parts ', ]
+messages = ['This is the message ', 'It will be sent ', 'in parts', ]
 
+# 连接服务端地址
 server_address = ('localhost', 8090)
 
-# Create aTCP/IP socket
+# 创建两个 socket 实例
+socks = [socket.socket(socket.AF_INET, socket.SOCK_STREAM), socket.socket(socket.AF_INET, socket.SOCK_STREAM), ]
 
-socks = [socket.socket(socket.AF_INET, socket.SOCK_STREAM), socket.socket(socket.AF_INET,  socket.SOCK_STREAM), ]
-
-# Connect thesocket to the port where the server is listening
-
-print ('connecting to %s port %s' % server_address)
-# 连接到服务器
+# 连接服务器
+print('connecting to %s port %s' % server_address)
 for s in socks:
     s.connect(server_address)
 
+# 向服务端发送数据，两个 socket 都发一次
 for index, message in enumerate(messages):
-    # Send messages on both sockets
     for s in socks:
-        print ('%s: sending "%s"' % (s.getsockname(), message + str(index)))
+        print('%s: sending "%s"' % (s.getsockname(), message + str(index)))
         s.send(bytes(message + str(index), encoding="utf-8"))
-    # Read responses on both sockets
 
+time.sleep(60)
+
+# 接受服务端数据
 for s in socks:
+    # recv 阻塞运行，读到数据就返回（最多读取1024个字节）
     data = s.recv(1024)
-    print ('%s: received "%s"' % (s.getsockname(), data))
-    if data != "":
-        print ('closingsocket', s.getsockname())
-        s.close()
+    print('%s: received "%s"' % (s.getsockname(), data))
+    print('closing socket', s.getsockname())
+    s.close()
