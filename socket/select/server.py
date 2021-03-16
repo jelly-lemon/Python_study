@@ -70,24 +70,36 @@ while inputs:
             conn_dict[conn_socket] = queue.Queue()
         else:
             # 有老用户发消息
-            # 前面设置了该 socket 为非阻塞 socket，没有数据也立即返回
-            # 客户端主动断开连接：recv 返回
-            # TODO 如何判断是没有发送数据了还是断开连接了？
-            data = s.recv(1024)
+            # readable 列表中肯定是可读的：要么断开了，要么有数据来了。
+            # 客户端主动正常断开连接：recv 返回空串
+            # 客户端强制关闭连接：recv 报错
+            try:
+                data = s.recv(1024)
 
-            if data != b'':
-                print('received "%s" from %s' % (data, s.getpeername()))
+                if data != b'':
+                    print('received "%s" from %s' % (data, s.getpeername()))
 
-                # 将收到的消息放入到相对应的 socket 客户端的消息队列中
-                conn_dict[s].put(data)
+                    # 将收到的消息放入到相对应的 socket 客户端的消息队列中
+                    conn_dict[s].put(data)
 
-                # 将该 socket 放入待写 socket 列表中（既然收到了消息，就要给出回复）
-                if s not in outputs:
-                    outputs.append(s)
-            else:
-                # 在读取数据发现客户端已经断开了连接, 将客户端的监听从 input 列表中移除
-                print(s.getpeername(), "closed")
+                    # 将该 socket 放入待写 socket 列表中（既然收到了消息，就要给出回复）
+                    if s not in outputs:
+                        outputs.append(s)
+                else:
+                    # 在读取数据发现客户端已经断开了连接, 将客户端的监听从 input 列表中移除
+                    print(s.getpeername(), "closed")
 
+                    # 将该连接 socket 移除待写和待读队列
+                    if s in outputs:
+                        outputs.remove(s)
+                    inputs.remove(s)
+
+                    # 移除对应socket客户端对象的消息队列
+                    del conn_dict[s]
+
+                    # 关闭该连接
+                    s.close()
+            except ConnectionResetError as e:
                 # 将该连接 socket 移除待写和待读队列
                 if s in outputs:
                     outputs.remove(s)
@@ -99,18 +111,25 @@ while inputs:
                 # 关闭该连接
                 s.close()
 
+                # 正要读取数据，结果对方强制断开连接
+                print(e)
+
     for s in writable:
         print("writable", s.getpeername())
 
         # 发来什么数据就回复什么数据
         message_queue = conn_dict.get(s)
         send_data = message_queue.get_nowait()
-        s.send(send_data)
+        try:
+            s.send(send_data)
+        except Exception as e:
+            print(e)
         outputs.remove(s)
 
         print(send_data)
 
     for s in exceptional:
+        # TODO 套接字会出现哪些错误呢？
         print('exception', s.getpeername())
 
         # 从待读列表中移除

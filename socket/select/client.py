@@ -26,12 +26,13 @@ for index, message in enumerate(messages):
         print('%s: sending "%s"' % (s.getsockname(), message + str(index)))
         s.send(bytes(message + str(index), encoding="utf-8"))
 
+# sleep 并不会断开 socket，socket 正常被维持着
 time.sleep(60)
-
-# 接受服务端数据
-for s in socks:
-    # recv 阻塞运行，读到数据就返回（最多读取1024个字节）
-    data = s.recv(1024)
-    print('%s: received "%s"' % (s.getsockname(), data))
-    print('closing socket', s.getsockname())
-    s.close()
+#
+# # 接受服务端数据
+# for s in socks:
+#     # recv 阻塞运行，读到数据就返回（最多读取1024个字节）
+#     data = s.recv(1024)
+#     print('%s: received "%s"' % (s.getsockname(), data))
+#     print('closing socket', s.getsockname())
+#     s.close()
