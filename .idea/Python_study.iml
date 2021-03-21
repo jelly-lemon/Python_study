@@ -2,7 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.6 (py36_imbalance)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Remote Python 3.6.8 (sftp://sftpuser4@192.168.111.128:22/usr/bin/python3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

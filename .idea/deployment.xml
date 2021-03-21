@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="221">
+  <component name="PublishConfigData">
     <serverData>
-      <paths name="221">
+      <paths name="sftpuser4@192.168.111.128:22">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/sftp_ssh/sftpuser4/Python_study" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>
