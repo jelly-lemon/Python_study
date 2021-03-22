@@ -2,10 +2,10 @@
 <project version="4">
   <component name="PublishConfigData">
     <serverData>
-      <paths name="sftpuser4@192.168.111.128:22">
+      <paths name="develop@10.245.18.226:50022">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/sftp_ssh/sftpuser4/Python_study" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

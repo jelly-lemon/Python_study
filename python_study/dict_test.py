@@ -47,6 +47,11 @@ def test_3():
     j.pop("name")
     print(j)
     print(type(j))
+    print(type(j["gender"]))
+
+
+if __name__ == '__main__':
+    test_3()
 
 
 
