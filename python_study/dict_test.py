@@ -1,3 +1,4 @@
+# encoding:utf-8
 import json
 
 def test_1():
@@ -29,7 +30,6 @@ def test_2():
     key_value[6] = 18
     key_value[3] = 323
 
-
     # print(key_value.items())
     # print("按值(value)排序:")
     # key_value = sorted(key_value.items(), key=lambda item: item[1])
@@ -51,7 +51,20 @@ def test_3():
 
 
 if __name__ == '__main__':
-    test_3()
+    d = {"name": u"绿盟", "age": 18, u"职位": "CEO"}
+    print d
+
+    d1 = json.dumps(d, encoding="ascii")
+    print type(d1)
+    print d1
+
+    d2 = json.loads(d1, encoding="ascii")
+    print type(d2)
+    print d2
+    print d2["name"]
+
+
+
 
 
 

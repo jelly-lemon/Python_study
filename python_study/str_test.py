@@ -44,7 +44,6 @@ if __name__ == '__main__':
     print("控制台编码方式：")
     print(sys.stdout.encoding)  # 打印stdout的编码方式
 
-    s = "你好"
 
 
 
