@@ -1,10 +1,4 @@
 
+import urllib2
 
-
-from rc4crypt import
-
-
-def test():
-
-
-
+urllib2.Request()
