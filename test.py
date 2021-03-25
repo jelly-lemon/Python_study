@@ -1,4 +1,7 @@
+# encoding:utf-8
+import json
 
-import urllib2
+d = {u"name": u"绿盟"}
 
-urllib2.Request()
+
+print d
