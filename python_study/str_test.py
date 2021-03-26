@@ -8,10 +8,11 @@ def test_1():
     print('''sdfaaf
     sdfafsadf
     
-    sdfafd
+      sdfafd
     dasf
     asdf
     ''')
+    print('''abc\ndef''')
 
 def test_2():
     # 空串为 False
@@ -29,20 +30,24 @@ def test_4():
     # 字符串转 dict
     config = '''{"company": "nsfocus", "phone": "%mobile%", "code": "验证码%code%"}'''
     # 方法 1
-    # config = json.loads(config)   # json里面的字符串都是 unicode字符（见http://json.org/）
+    # config = json.loads(config)   # json里面的字符串都是 unicode 字符（见http://json.org/）
     # print(config)
 
     # 方法2
     config = eval(config)
     print(config)
 
-
-
-if __name__ == '__main__':
+def test_5():
     print("默认编码方式：")
     print(sys.getdefaultencoding())
     print("控制台编码方式：")
     print(sys.stdout.encoding)  # 打印stdout的编码方式
+
+
+
+if __name__ == '__main__':
+    test_1()
+
 
 
 
