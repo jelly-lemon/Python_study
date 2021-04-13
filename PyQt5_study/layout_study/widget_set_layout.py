@@ -2,7 +2,8 @@
 设置 QWidget 的布局
 
 为什么 QWidget 的 show 效果和 QMainWindow 的 show 效果是一样的？
-个人猜测：QT 框架会判断 show 的是不是 QMainWindow，如果不是，会套一个 Window 吧
+个人猜测：
+QT 框架会判断 show 的是不是 QMainWindow，如果不是，会套一个 QMainWindow 吧。
 
 """
 import sys

@@ -19,19 +19,13 @@ class Example(QMainWindow):
 
         Thread(target=self.add_count).start()
 
-
-
     def add_count(self):
         print("count", self.count)
         self.count += 1
         print("count", self.count)
 
 
-
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = Example()
     sys.exit(app.exec_())
-

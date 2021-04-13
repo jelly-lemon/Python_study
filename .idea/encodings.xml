@@ -9,12 +9,12 @@
     <file url="file://$PROJECT_DIR$/multi_thread/child_thread_call_main_func.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multi_thread/lock/print_lock.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/multi_thread/lock/spinlock.py" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/python_study/call_other_exe_by_async.py" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/python_study/double_click_open_file.py" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/python_study/exe_is_running.py" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/python_study/get_file_name_in_dir.py" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/python_study/process_info.py" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/python_study/use_win_cmd.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/python3_study/call_other_exe_by_async.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/python3_study/double_click_open_file.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/python3_study/exe_is_running.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/python3_study/get_file_name_in_dir.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/python3_study/process_info.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/python3_study/use_win_cmd.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/socket/poll/server.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test.py" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />

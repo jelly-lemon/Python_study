@@ -45,7 +45,7 @@ if __name__ == '__main__':
     # 路径测试
     # exe 和文件同时加上双引号，就提示不是内部命令，奇怪
     player = "C:/Program Files (x86)/Notepad++/notepad++.exe"
-    file_path = "D:/0-0-pycharm/Python_study/python_study/test_txt/a b.txt"
+    file_path = "D:/0-0-pycharm/Python_study/python3_study/test_txt/a b.txt"
     # cmd = """\"%s\" \"%s\"""" % (player, file_path)
     # print(cmd)
     os.system(player)

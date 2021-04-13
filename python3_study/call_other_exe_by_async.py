@@ -6,7 +6,7 @@ p = subprocess.Popen(["\"C:\\Program Files (x86)\\Notepad++\\notepad++.exe\"", '
 
 笨蛋，搞不懂上面加个 [] 干嘛，用下面这种方法：
 player = "C:/Program Files (x86)/Notepad++/notepad++.exe"
-file_path = "D:/0-0-pycharm/Python_study/python_study/test_txt/a b.txt"
+file_path = "D:/0-0-pycharm/Python_study/python3_study/test_txt/a b.txt"
 p = subprocess.Popen('"%s" "%s"' % (player, file_path))
 
 p.poll()：检查程序是否结束
@@ -21,7 +21,7 @@ import subprocess
 # subprocess.Popen("hello.txt") # 以默认程序打开文件
 
 player = "C:/Program Files (x86)/Notepad++/notepad++.exe"
-file_path = "D:/0-0-pycharm/Python_study/python_study/test_txt/a b.txt"
+file_path = "D:/0-0-pycharm/Python_study/python3_study/test_txt/a b.txt"
 p = subprocess.Popen('"%s" "%s"' % (player, file_path))
 
 

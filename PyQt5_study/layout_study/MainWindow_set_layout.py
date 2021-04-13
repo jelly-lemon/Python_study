@@ -1,48 +1,33 @@
 """
 学习设置 QMainWindow 的布局
 
-QMainWindow 自带一个 layout（具体是什么呢？），(不能再用 setLayout ?)
-
-第一步：
-创建一个QWidget实例，并将这个实例设置为centralWidget：
-QWidget *widget = new QWidget();//也可以是自己定义的一个类。
-
-第二步：
-创建一个主布局mainLayout，并把所需要的所有控件都往里面放（工具栏、菜单栏、状态栏除外）：
-QHBoxLayout *mainLayout = new QHBoxLayout;
-mainLayout->addWidget(...);
-mainLayout->addLayout(...);
-
-第三步：
-this->setCentralWidget(widget);
+QMainWindow 自带一个 layout，所以不能再用 setLayout
+（我就把 QMainWindow 自带的 layout 叫做 MainWindowLayout）
 """
 
 import sys
 from PyQt5.QtWidgets import (QWidget, QLabel, QApplication, QVBoxLayout, QMainWindow)
 
-class Example(QMainWindow):
 
+class Example(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        # QWidget 带不带 self 的区别（也就是设置 parent 与否的区别？）？
-        # 其中参数 parent 指向父窗口，如果这个参数为 0，则窗口就成为一个顶级窗口（什么叫顶级窗口？最前面的窗口？）
-        # 顶级窗口的反义词？
-        main_widget = QWidget()
+        # 控件
+        title_label = QLabel('Title')
 
-        title = QLabel('Title')
+        # 布局对象（这些对象都是局部对象，为什么执行完该函数之后还存在？或者说，界面上还有？）
         v_layout = QVBoxLayout()
-        v_layout.addWidget(title)
+        v_layout.addWidget(title_label)  # 往布局里添加控件
 
+        main_widget = QWidget()
         main_widget.setLayout(v_layout)
 
-        self.setCentralWidget(main_widget)
+        self.setCentralWidget(main_widget)  # 设置 MainWindow 的中央空间
         self.setWindowTitle('Review')
 
-
-
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
+    app = QApplication(sys.argv)  # 初始化应用
     ex = Example()
     ex.show()
     sys.exit(app.exec_())
