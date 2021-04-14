@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData">
     <serverData>
-      <paths name="develop@10.245.18.226:50022">
+      <paths name="堡垒机Qt">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
