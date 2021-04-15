@@ -1,3 +1,7 @@
+"""
+正则表达式
+"""
+
 import re
 
 def test_0():
@@ -30,6 +34,19 @@ def test_2():
     match = pattern.findall(s)  # 列表形式返回找到符合规则的所有子串
     print(s)
     print(match)
+
+def test_3():
+    """
+    判断是否即存在大写字母，也存在小写字母
+    """
+    s = "abc123def2hi3"
+    pattern_1 = re.compile("[a-z]+")
+    match_1 = pattern_1.findall(s)  # 列表形式返回找到符合规则的所有子串
+    pattern_2 = re.compile("[A-Z]+")
+    match_2 = pattern_2.findall(s)
+    if (match_1 and match_2):
+        print(match_1)
+        print(match_2)
 
 if __name__ == '__main__':
     test_2()
