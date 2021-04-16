@@ -44,9 +44,18 @@ def test_5():
     print(sys.stdout.encoding)  # 打印stdout的编码方式
 
 
+def test_6():
+    """
+    字符串替换
+    """
+    s = "!@#$!@#$"
+    s = s.replace("!", "\!")    # 会替换所有
+    print(s)
+
+
 
 if __name__ == '__main__':
-    test_1()
+    test_6()
 
 
 

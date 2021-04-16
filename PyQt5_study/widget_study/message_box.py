@@ -6,16 +6,15 @@ from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
 
 
 class Example(QWidget):
-
     def __init__(self):
-        super().__init__()
+        super().__init__()  # 调用父对象初始化方法
 
         self.initUI()
 
     def initUI(self):
-        self.setGeometry(300, 300, 250, 150)
+        self.setGeometry(300, 300, 250, 150)    # 设置窗口起点和大小
         self.setWindowTitle('Message box')
-        self.show()
+        self.show() # 显示窗口
 
     # 重写父类的方法（覆盖）
     def closeEvent(self, event):
