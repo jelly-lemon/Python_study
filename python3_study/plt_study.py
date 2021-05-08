@@ -1,6 +1,7 @@
 from matplotlib import pyplot as plt
 import matplotlib.ticker as mtick
 import random
+import numpy as np
 
 
 def test_1():
@@ -26,6 +27,19 @@ def test_1():
     plt.suptitle("总标题", fontsize=16)
     plt.show()
 
+def test_2():
+    """
+    文字注释
+    """
+    x = np.arange(0, 6)
+    y = x * x
+
+    plt.plot(x, y, marker='o')
+    for xy in zip(x, y):
+        # xytest 表示偏移 xy 的位置
+        plt.annotate("(%s,%s)" % xy, xy=xy, xytext=(-10, 10), textcoords='offset points')
+    plt.show()
+
 
 if __name__ == '__main__':
-    test_1()
+    test_2()
