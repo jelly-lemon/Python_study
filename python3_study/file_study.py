@@ -7,11 +7,16 @@ def test_0():
     """
     判断文件或文件夹是否存在
     """
+    # 方法 1
     # 文件或文件夹都可
     if os.path.exists("./file_study.py"):
         print("yes")
     else:
         print("no")
+
+    # 方法 2，直接尝试读取文件，不存在就报异常
+    file = open("./hello.txt")
+
 
 def test_1():
     """
@@ -55,6 +60,15 @@ def test_4():
             dir_name.append(path)
             print(path)
 
+def test_5():
+    """
+    读取文件全部内容
+    """
+    # 【易错点】默认打开文件的编码是 GBK
+    file = open("file_study.py", encoding="utf-8")
+    content = file.readlines()
+    print(content)
+
 
 if __name__ == '__main__':
-    test_3()
+    test_5()
