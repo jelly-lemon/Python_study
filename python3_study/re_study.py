@@ -48,5 +48,12 @@ def test_3():
         print(match_1)
         print(match_2)
 
+def test_4():
+    """
+    数字查找
+    """
+    result = re.findall("\d+.\d+", "nihao 12.34 hello66.34")
+    print(result)
+
 if __name__ == '__main__':
-    test_2()
+    test_4()

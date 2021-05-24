@@ -1,5 +1,6 @@
 # -*- encoding:utf-8 -*-
 import json
+import os
 import sys
 
 
@@ -38,10 +39,23 @@ def test_4():
     print(config)
 
 def test_5():
-    print("默认编码方式：")
+    """
+    控制台乱码问题
+    """
+    print("python IDLE 默认编码方式：")
     print(sys.getdefaultencoding())
-    print("控制台编码方式：")
-    print(sys.stdout.encoding)  # 打印stdout的编码方式
+    print("python IDLE：")
+    print("stdout:", sys.stdout.encoding)  # 打印stdout的编码方式
+    print("stderr:", sys.stderr.encoding)
+
+    print("windows cmd 默认编码方式：")
+    os.system("chcp")
+    print("执行 C:/abc.exe：")
+    os.system("C:/abc.exe")
+    print("设置 windows cmd 编码方式：")
+    os.system("chcp 65001") # 设置 windows 编码为 utf-8
+    print("执行 C:/abc.exe：")
+    os.system("C:/abc.exe")
 
 
 def test_6():
@@ -55,7 +69,7 @@ def test_6():
 
 
 if __name__ == '__main__':
-    test_6()
+    test_5()
 
 
 
