@@ -18,7 +18,7 @@ def rsaEncrypt(str):
     print("公钥：%s" % pubkey)
     print("密钥：%s" % privkey)
 
-    # 对明文编码
+    # 对字符串编码，转为字节串
     content = str.encode("utf-8")  # 对输入进来的字符串用 utf-8 进行编码，得到二进制编码
 
     # 公钥加密
@@ -37,15 +37,17 @@ def rsaDecrypt(str, privkey):
     """
     # 私钥解密
     content = rsa.decrypt(str, privkey)
-    org_str = content.decode("utf-8")  # 对二进制进行解码，得到原始字符串
+    org_str = content.decode("utf-8")  # 对字节串进行解码，得到原始字符串
 
     return org_str
 
-
-if __name__ == '__main__':
+def test_0():
     org_str = "hello"
     enc_str, privkey = rsaEncrypt(org_str)
     print("原始字符串：%s" % org_str)
     print("公钥加密后：%s" % enc_str)
     dec_str = rsaDecrypt(enc_str, privkey)
     print("私钥解密后：%s" % dec_str)
+
+if __name__ == '__main__':
+    test_0()
