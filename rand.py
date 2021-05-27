@@ -1,7 +1,17 @@
 """
 生成随机数
 """
+import random
+
 import numpy as np
+
+def test_0():
+    """
+    生成一个随机整数
+    """
+    # 生成的随机数包含第二个参数
+    print(random.randint(0, 1))
+
 
 def test_1():
     """
@@ -14,4 +24,5 @@ def test_1():
 
 
 
-test_1()
+if __name__ == '__main__':
+    test_0()

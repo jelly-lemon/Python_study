@@ -20,11 +20,17 @@ def test_1():
         a = 2/b
     except Exception as err:
         print(err)
+    # 捕获异常异常，后面语句接着执行
+    print("hello")
+
 def test_2():
     """
     主动抛出异常
     """
     raise IOError("can't create file")
 
+
+
+
 if __name__ == '__main__':
-    test_2()
+    test_1()
