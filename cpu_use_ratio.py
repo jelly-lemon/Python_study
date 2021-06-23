@@ -3,7 +3,6 @@
 
 获取 cpu 占用率：psutil.cpu_percent()
 计算占用率，分母是一段时间，所以 cpu_percent 是计算的一段时间内的
-
 """
 
 import time
