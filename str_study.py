@@ -5,7 +5,9 @@ import sys
 
 
 def test_1():
-    # 多行字符串常量
+    """
+    多行字符串常量
+    """
     print('''sdfaaf
     sdfafsadf
     
@@ -16,19 +18,25 @@ def test_1():
     print('''abc\ndef''')
 
 def test_2():
-    # 空串为 False
+    """
+    空串为 False
+    """
     if "":
         print("yes")
 
 
 def test_3():
-    # 字符串查找
+    """
+    字符串查找
+    """
     s ="abc"
     if s.find("bc") != -1:
         print("yes")
 
 def test_4():
-    # 字符串转 dict
+    """
+    字符串转 dict
+    """
     config = '''{"company": "nsfocus", "phone": "%mobile%", "code": "验证码%code%"}'''
     # 方法 1
     # config = json.loads(config)   # json里面的字符串都是 unicode 字符（见http://json.org/）
@@ -67,9 +75,16 @@ def test_6():
     print(s)
 
 
+def test_7():
+    """
+    打印 list
+    """
+    name = ['aaa', 'bbb', 'ccc']
+    print("my friends:%s" % name)
+
 
 if __name__ == '__main__':
-    test_5()
+    test_7()
 
 
 
