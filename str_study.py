@@ -29,7 +29,7 @@ def test_3():
     """
     字符串查找
     """
-    s ="abc"
+    s = "abc"
     if s.find("bc") != -1:
         print("yes")
 
@@ -82,9 +82,21 @@ def test_7():
     name = ['aaa', 'bbb', 'ccc']
     print("my friends:%s" % name)
 
+def test_8():
+    """
+    split 分割字符串
+    """
+    # ['hhh', '1']
+    s = "hhh./img/hello/world1".split("./img/hello/world")
+    print(s)
+
+    # 如果匹配的字串刚好再最前，则返回结果会有一个空串
+    # ['', '1']
+    s = "./img/hello/world1".split("./img/hello/world")
+    print(s)
 
 if __name__ == '__main__':
-    test_7()
+    test_8()
 
 
 

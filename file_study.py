@@ -1,5 +1,5 @@
 
-
+import shutil
 import os
 
 
@@ -46,6 +46,8 @@ def test_3():
     """
     dir = "./0519/test/hello"
     head, tail = os.path.split(dir)
+
+    # ./0519/test hello
     print(head, tail)
 
 def test_4():
@@ -69,6 +71,38 @@ def test_5():
     content = file.readlines()
     print(content)
 
+def test_6():
+    """
+    按行读取文件
+    """
+    with open("file_study.py", encoding="utf-8") as file:
+
+        s = file.readline()
+        while s != "":
+            print(s)
+            s = file.readline()
+
+def test_7():
+    """
+    拷贝文件
+    """
+    r = shutil.copy("./file_study.py", "./img")
+    print(r)
+
+def test_8():
+    """
+    获取目录下所有文件名
+
+    输出：
+    ./img
+    []
+    ['head.jpg', 'logo.png', 'xiaoniu.jpg']
+    """
+    for root, dirs, files in os.walk("./img"):
+        print(root)  # 当前目录路径
+        print(dirs)  # 当前路径下所有子目录
+        print(files)  # 当前路径下所有文件
+
 
 if __name__ == '__main__':
-    test_5()
+    test_8()
