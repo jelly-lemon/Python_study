@@ -1,8 +1,3 @@
-"""
-继承父类，私有函数和私有属性会被子类继承吗？
-不会。仅继承公开函数和属性
-"""
-
 class Car:
     def __init__(self):
         self.father = "Fute"
@@ -12,7 +7,13 @@ class Car:
         print("Car")
 
     def _printCreateTime(self):
+        """
+        函数前加_ 表示私有函数
+        """
         print(self._create_time)
+
+    def print_class_name(self):
+        print(self.__class__.__name__)
 
 
 class BMWCar(Car):
@@ -20,9 +21,20 @@ class BMWCar(Car):
 
 
 def test_0():
+    """
+    使用子类对象，调用父类方法
+    """
     car_0 = BMWCar()
     car_0.printName()   # 调用父类公开方法
     print(car_0.father) # 访问父类公开属性
 
+def test_1():
+    """
+    访问 self.__class__.__name__，是子类的呢还是父类的？
+    子类的
+    """
+    car = BMWCar()
+    car.print_class_name()
+
 if __name__ == '__main__':
-    test_0()
+    test_1()

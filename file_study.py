@@ -29,9 +29,11 @@ def test_1():
 def test_2():
     """
     创建多级目录
+
+    os.makedirs：即使父目录不存在也可以
     """
-    dir = "./0519/test"
-    if (os.path.exists(dir) is False):
+    dir = "./0519/abc/test"
+    if os.path.exists(dir) is False:
         print(dir, "not exists")
         os.makedirs(dir)
         if (os.path.exists(dir)):
@@ -104,4 +106,4 @@ def test_8():
 
 
 if __name__ == '__main__':
-    test_8()
+    test_2()
