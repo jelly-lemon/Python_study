@@ -1,12 +1,13 @@
 # -*- encoding:utf-8 -*-
 import json
 import os
+import re
 import sys
 
 
 def test_1():
     """
-    多行字符串常量
+    多行字符串常量，原汁原味输入，换行不用输入转义字符
     """
     print('''sdfaaf
     sdfafsadf
@@ -39,7 +40,7 @@ def test_4():
     """
     config = '''{"company": "nsfocus", "phone": "%mobile%", "code": "验证码%code%"}'''
     # 方法 1
-    # config = json.loads(config)   # json里面的字符串都是 unicode 字符（见http://json.org/）
+    # config = json.loads(config)   # json 里面的字符串都是 unicode 字符
     # print(config)
 
     # 方法2
@@ -49,19 +50,22 @@ def test_4():
 def test_5():
     """
     控制台乱码问题
+
+    IDLE 是 Python 自带的 IDE
     """
-    print("python IDLE 默认编码方式：")
-    print(sys.getdefaultencoding())
-    print("python IDLE：")
-    print("stdout:", sys.stdout.encoding)  # 打印stdout的编码方式
-    print("stderr:", sys.stderr.encoding)
+    print("python IDLE default encoding：", sys.getdefaultencoding())
+    print("stdout default encoding:", sys.stdout.encoding)  # 打印stdout的编码方式
+    print("stderr default encoding:", sys.stderr.encoding)
 
     print("windows cmd 默认编码方式：")
     os.system("chcp")
     print("执行 C:/abc.exe：")
     os.system("C:/abc.exe")
+
     print("设置 windows cmd 编码方式：")
     os.system("chcp 65001") # 设置 windows 编码为 utf-8
+    print("windows cmd 默认编码方式：")
+    os.system("chcp")
     print("执行 C:/abc.exe：")
     os.system("C:/abc.exe")
 
@@ -95,8 +99,17 @@ def test_8():
     s = "./img/hello/world1".split("./img/hello/world")
     print(s)
 
+def test_9():
+    """
+    正则表达式
+    """
+    # 默认从开头匹配，其余位置都不算匹配到，返回 None
+    result = re.match("crypto", "crypto.encrypt")
+    # 打印匹配到的字符串
+    print(result.group(0))
+
 if __name__ == '__main__':
-    test_8()
+    test_5()
 
 
 
