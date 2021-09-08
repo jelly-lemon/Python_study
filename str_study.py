@@ -108,8 +108,17 @@ def test_9():
     # 打印匹配到的字符串
     print(result.group(0))
 
+def test_10():
+    """
+    字符串格式化
+
+    如果要输出 %，用 %% 表示，而不是 \%
+    """
+    s = "%.2f%%, %8.4f" % (1, 2)
+    print(s)
+
 if __name__ == '__main__':
-    test_5()
+    test_10()
 
 
 
