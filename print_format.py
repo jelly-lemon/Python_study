@@ -1,3 +1,4 @@
+import sys
 from pprint import pprint
 
 def test_1():
@@ -29,6 +30,21 @@ def test_3():
     """
     pprint(str("hello"))
 
+def test_4():
+    """
+    退格
+    """
+    # 输出换行后，就无法对上一行进行退格
+    print("hello\b\b", "world")
+    print("\b\b")
+
+def test_5():
+    """
+    sys.stdout 是原始输出，print 是经过封装的输出函数
+    """
+    sys.stdout.write("hello")
+    sys.stdout.write("world")
+
 
 if __name__ == '__main__':
-    test_3()
+    test_5()
