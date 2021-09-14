@@ -1,3 +1,11 @@
+"""
+面向过程方式：
+
+
+面向对象方式：
+FigureCanvas（画布）、 Figure (图像)、 Axes (轴域)
+"""
+
 from matplotlib import pyplot as plt
 import matplotlib.ticker as mtick
 import random
