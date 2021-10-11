@@ -1,6 +1,8 @@
 """
 条状图
 """
+from math import log
+
 from matplotlib import pyplot as plt
 
 def draw_line(x:list, y:list) -> None:
@@ -25,5 +27,15 @@ def test_0():
     y = [0.5,0.6,0.7,0.8,0.9,0.8,0.7]
     draw_line(x, y)
 
+def test_1():
+    """
+    画函数 1/(IR*log2IR)
+    """
+    x = [i for i in range(2, 200)]
+    y = [1/(IR*log(IR, 2)) for IR in x]
+    print(x)
+    print(y)
+    draw_line(x, y)
+
 if __name__ == '__main__':
-    test_0()
+    test_1()
