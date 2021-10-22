@@ -43,6 +43,12 @@ def test_3():
     """
     data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
     new_data = np.random.choice(data, 5, replace=False)  # replace=False 表示不放回
+    # 【注意】np.random.choice 返回值是 ndarray
+    print(new_data) # ['g' 'i' 'e' 'a' 'c']，直接返回元素，而不是索引值
+
+    # 方法 2，使用 python 自带的 random 模块
+    # 【注意】random.sample 返回值是 list
+    new_data = random.sample(data, 5)
     print(new_data)
 
 
@@ -58,12 +64,24 @@ def test_4():
     d1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     d2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
     state = np.random.get_state()
+    print(state)
     np.random.shuffle(d1)
     print(d1)
     np.random.set_state(state)
     np.random.shuffle(d2)
     print(d2)
 
+def test_5():
+    """
+    随机选择元素，不过想获得元素的索引，而不是元素
+    """
+    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+    index = random.sample(range(len(data)), 5)
+    print(index)
+
+    # 再根据索引去选择元素
+    new_data = [data[i] for i in index]
+    print(new_data)
 
 if __name__ == '__main__':
-    test_4()
+    test_5()
