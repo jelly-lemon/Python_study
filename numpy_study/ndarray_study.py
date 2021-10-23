@@ -1,3 +1,5 @@
+from collections import Counter
+
 import numpy as np
 
 
@@ -57,10 +59,64 @@ def test_3():
 
     # 按列拼接
     d3 = np.concatenate((d1, d2))
-    print(d3)   # [1 2 3 4 5 6]
+    print(d3)  # [1 2 3 4 5 6]
 
 
+def test_4():
+    """
+    求最大元素下标
+    """
+    d1 = [[0.1, 0.2, 0.3], [0.3, 0.2, 0.1]]
+    max_index = np.argmax(d1, axis=1)
+    print(max_index)
+
+
+def test_5():
+    """
+    改变 dtype
+    """
+    d1 = np.array([0., 1., 2., 1.5, 1.6, 1.9])
+    d1 = d1.astype(dtype="int32")
+    print(d1)  # [0 1 2 1 1 1]
+
+
+def test_6():
+    """
+    统计某个数字出现的次数
+    """
+    d1 = np.array([1, 2, 3, 4, 5, 5, 5])
+    n = sum(d1 == 5)
+    print(n)
+
+    # 使用 Counter
+    c = Counter(d1)
+    print(c)
+
+
+def test_7():
+    """
+    获取所有等于该值的索引
+    """
+    d1 = np.array([1, 2, 3, 4, 5, 5, 5])
+    index = np.where(d1 == 5)[0]
+    print(index) # [4 5 6]
+
+def test_8():
+    """
+    数组比较：两两比较，相等为 True，不相等为 False
+    """
+    d1 = np.array([0, 1, 1, 1])
+    d2 = np.array([0, 0, 1, 1])
+    print(d1 == d2) # [ True False  True  True]
+
+def test_9():
+    """
+    数组相乘
+    """
+    d1 = np.array([0, 1, 1, 1])
+    d2 = np.array([0, 0, 1, 1])
+    print(d1*d2)
 
 
 if __name__ == '__main__':
-    test_3()
+    test_9()
