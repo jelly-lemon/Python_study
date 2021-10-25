@@ -84,11 +84,12 @@ def test_6():
     """
     统计某个数字出现的次数
     """
+    # 方法 1：使用 sum
     d1 = np.array([1, 2, 3, 4, 5, 5, 5])
     n = sum(d1 == 5)
     print(n)
 
-    # 使用 Counter
+    # 方法 2：使用 Counter
     c = Counter(d1)
     print(c)
 
@@ -107,7 +108,11 @@ def test_8():
     """
     d1 = np.array([0, 1, 1, 1])
     d2 = np.array([0, 0, 1, 1])
-    print(d1 == d2) # [ True False  True  True]
+    d3 = (d1 == d2)
+    print(d3) # [ True False  True  True]
+
+    print(sum(d3[d3 == True]))
+
 
 def test_9():
     """
@@ -119,4 +124,4 @@ def test_9():
 
 
 if __name__ == '__main__':
-    test_9()
+    test_8()
