@@ -6,10 +6,8 @@ def test_0():
     """
     # 方法 1
     names = ["zhang", "li", "wang"]
-    i = 0
-    while i < len(names):
+    for i in range(len(names)):
         print(names[i])
-        i = i+1
 
     # 方法 2
     it = iter(names)

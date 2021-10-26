@@ -54,10 +54,14 @@ def test_3():
     print(d3)
 
     # 创建新的维度拼接
+    d1 = np.array([1, 2, 3])
+    d2 = np.array([4, 5, 6])
     d3 = np.stack((d1, d2))
     print(d3)
 
     # 按列拼接
+    d1 = np.array([1, 2, 3])
+    d2 = np.array([4, 5, 6])
     d3 = np.concatenate((d1, d2))
     print(d3)  # [1 2 3 4 5 6]
 
@@ -111,6 +115,7 @@ def test_8():
     d3 = (d1 == d2)
     print(d3) # [ True False  True  True]
 
+    # 统计两者相等的数量
     print(sum(d3[d3 == True]))
 
 

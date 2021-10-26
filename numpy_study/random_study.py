@@ -22,10 +22,10 @@ def test_0():
 
 def test_1():
     """
-    生成一个随机整数
+    生成一个随机整数，可指定范围
     """
     # 生成的随机数包含第二个参数
-    print(random.randint(0, 1))
+    print(random.randint(0, 99))
 
 
 def test_2():
@@ -84,4 +84,4 @@ def test_5():
     print(new_data)
 
 if __name__ == '__main__':
-    test_5()
+    test_1()
