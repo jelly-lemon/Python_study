@@ -127,6 +127,37 @@ def test_9():
     d2 = np.array([0, 0, 1, 1])
     print(d1*d2)
 
+def test_10():
+    """
+    求最大值：max，最小值：min
+    """
+    d1 = [1, 2, 3, 4]
+    d1_max = max(d1)
+    print(d1_max)
+
+    # 求最小值
+    d1_min = min(d1)
+    print(d1_min)
+
+def test_11():
+    """
+    求出现次数最多的数字
+    """
+    d1 = [1, 2, 3, 1, 3, 3]
+    b1 = np.bincount(d1)    # 必须是正整数
+    print(b1)
+    n_most_times = np.argmax(b1)  # 可两步合并为一步：np.argmax(np.bincount(d1))
+    print(n_most_times)
+
+    # 二维数组，求出每一列出现次数最多的数值
+    d1 = [[1,2,3,4,3], [1,2,3,4,5], [0,1,2,3,5]]
+    d1_max = []
+    for j in range(len(d1[0])):
+        d2 = [d1[i][j] for i in range(len(d1))]
+        max = np.argmax(np.bincount(d2)) #【注意】如果不存在出现次数最多的数值，返回第一个
+        d1_max.append(max)
+    print(d1_max)
+
 
 if __name__ == '__main__':
-    test_8()
+    test_11()
