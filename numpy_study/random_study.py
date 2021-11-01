@@ -1,7 +1,6 @@
 import numpy as np
 
 import random
-import pandas
 
 def test_0():
     """
