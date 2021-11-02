@@ -12,7 +12,7 @@ import random
 import numpy as np
 
 
-def test_1():
+def test_0():
     """
     绘制多个子图
     """
@@ -36,7 +36,7 @@ def test_1():
     plt.show()
 
 
-def test_2():
+def test_1():
     """
     文字注释
     """
@@ -50,7 +50,7 @@ def test_2():
     plt.show()
 
 
-def test_3():
+def test_2():
     """
     面向对象方式画图
     """
@@ -64,9 +64,21 @@ def test_3():
     fig.show()
 
 
+def test_3():
+    """
+    面向过程画图
+    """
+    x = [1, 2, 3, 4, 5, 6, 7]
+    y = [0.5, 0.6, 0.7, 0.8, 0.9, 0.8, 0.7]
+
+    plt.title("Hello World")
+    plt.plot(x, y)
+    plt.show()
+
+
 def test_4():
     """
-    TODO 设置各种字体
+    设置各种字体
     """
     x = [1, 2, 3, 4, 5, 6, 7]
     y = [0.5, 0.6, 0.7, 0.8, 0.9, 0.8, 0.7]
@@ -76,9 +88,25 @@ def test_4():
                'size': 24,
                }
 
-    # plt.plot(x, y) 是面向过程方式
-    fig, axis = plt.subplots(1)
-    axis.set_title("Hello World", fontdict=my_font)
+    fig, axis = plt.subplots(1, 1, figsize=(16, 9))
+
+    # 标题字体
+    axis.set_title("Hello World", fontdict=my_font)  # 标题
+    axis.set_xlabel("xlabel", fontdict=my_font)
+    axis.set_ylabel("ylabel", fontdict=my_font)
+
+    # x轴字体
+    xticks = range(6)
+    xticks_labels = ["one", "two", "three", "four", "five", "six"]
+    axis.set_xticks(xticks)  # 【注意】要先 set_xticks，才能 set_xticklabels，并且两者要一一对应
+    axis.set_xticklabels(xticks_labels, fontname="Times New Roman", fontsize=16)
+
+    # y轴字体
+    for label in axis.get_yticklabels():
+        label.set_fontname('Times New Roman')
+        label.set_fontsize(24)
+
+    axis.plot(x, y)
 
     fig.show()
 
