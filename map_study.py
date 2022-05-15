@@ -7,8 +7,8 @@ def test_0():
     a = map(float, [1, 0])
 
     # 转为 list
-    print(a)
-    print(list(a))
+    print(a)    # <map object at 0x0000024084B5C760>
+    print(list(a))  # [1.0, 0.0]
 
 
 

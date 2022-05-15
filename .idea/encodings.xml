@@ -6,7 +6,6 @@
     <file url="file://$PROJECT_DIR$/algorithm/find_max_in_stack.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/algorithm/find_top_k_in_stack.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/algorithm/two_stack_to_queue.py" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/call_other_exe.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/design_pattern/event_driven/README.md" charset="GBK" />
     <file url="file://$PROJECT_DIR$/double_click_open_file.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/exe_is_running.py" charset="UTF-8" />
@@ -18,6 +17,7 @@
     <file url="file://$PROJECT_DIR$/socket/poll/server.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/use_win_cmd.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/win_exe/call_other_exe.py" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

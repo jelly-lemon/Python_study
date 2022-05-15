@@ -26,6 +26,7 @@ def test_1():
     file1.write("hello, 0519")
     file1.close()
 
+
 def test_2():
     """
     创建多级目录
@@ -36,10 +37,11 @@ def test_2():
     if os.path.exists(dir) is False:
         print(dir, "not exists")
         os.makedirs(dir)
-        if (os.path.exists(dir)):
+        if os.path.exists(dir):
             print(dir, "create success")
         else:
             print(dir, "create failed")
+
 
 def test_3():
     """
@@ -48,8 +50,8 @@ def test_3():
     dir = "./0519/test/hello"
     head, tail = os.path.split(dir)
 
-    # ./0519/test hello
-    print(head, tail)
+    print(head, tail)   # ./0519/test hello
+
 
 def test_4():
     """
@@ -57,31 +59,40 @@ def test_4():
     """
     dir = ".."
     dir_name = []
-    for name in os.listdir(dir):
+    for name in os.listdir(dir):    # 列出所有文件夹和文件名
         path = os.path.join(dir, name)
         if os.path.isdir(path):
             dir_name.append(path)
             print(path)
+
 
 def test_5():
     """
     读取文件全部内容
     """
     # 【易错点】默认打开文件的编码是 GBK
+    # 在 text 模式下，如果未指定 encoding，
+    # 则通过 locale.getpreferredencoding(False) 获取
     file = open("file_study.py", encoding="utf-8")
-    content = file.readlines()
+    content = file.readlines()  # 读取所有行
     print(content)
+
 
 def test_6():
     """
     按行读取文件
+
+    with 所求值的对象必须有一个 __enter__() 方法，一个 __exit__() 方法。
+    紧跟 with 后面的语句被求值后，对象的 __enter__() 方法被调用，
+    这个方法的返回值将被赋值给 as 后面的变量。
+    当 with 后面的代码块全部被执行完之后，将调用前面返回对象的 __exit__() 方法
     """
     with open("file_study.py", encoding="utf-8") as file:
-
         s = file.readline()
         while s != "":
             print(s)
             s = file.readline()
+
 
 def test_7():
     """
@@ -89,6 +100,7 @@ def test_7():
     """
     r = shutil.copy("./file_study.py", "./img")
     print(r)
+
 
 def test_8():
     """
@@ -100,9 +112,9 @@ def test_8():
     ['head.jpg', 'logo.png', 'xiaoniu.jpg']
     """
     for root, dirs, files in os.walk("./img"):
-        print(root)  # 当前目录路径
-        print(dirs)  # 当前路径下所有子目录
-        print(files)  # 当前路径下所有文件
+        print(root)     # 当前目录路径
+        print(dirs)     # 当前路径下所有子目录
+        print(files)    # 当前路径下所有文件
 
 
 if __name__ == '__main__':

@@ -10,10 +10,10 @@ def test_0():
     str 与 bytes 类型
     """
     s = "你好"
-    print(type(s))
+    print(type(s))  # <class 'str'>
 
     b = s.encode("utf-8")
-    print(type(b))
+    print(type(b))  # <class 'bytes'>
 
 
 if __name__ == '__main__':

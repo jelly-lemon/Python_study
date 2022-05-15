@@ -11,9 +11,6 @@ import psutil
 def test_0():
     """
     获取进程信息（信息是一个对象）
-
-    :param exe_name: 进程名
-    :return: 进程信息列表
     """
     exe_name = "msedge.exe"
     proc_list = []

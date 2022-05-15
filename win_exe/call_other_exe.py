@@ -1,4 +1,3 @@
-
 def test_0():
     """
     异步调用外部程序（就是函数调用外部程序之后就立刻返回）
@@ -15,7 +14,8 @@ def test_0():
 
     player = "C:/Program Files (x86)/Notepad++/notepad++.exe"
     file_path = "D:/0-0-pycharm/Python_study/python3_study/test_txt/a b.txt"
-    p = subprocess.Popen('"%s" "%s"' % (player, file_path)) # 相当于在 cmd 中执行
+    p = subprocess.Popen('"%s" "%s"' % (player, file_path))  # 相当于在 cmd 中执行
+
 
 def test_1():
     """
@@ -25,7 +25,7 @@ def test_1():
 
     # 方法 1
     # 这种方法只能执行外部程序，无法获得返回值
-    res = os.system("help") # 调用正常返回 1
+    res = os.system("help")  # 调用正常返回 1
     print(res)
 
     # 方法 2，管道通信

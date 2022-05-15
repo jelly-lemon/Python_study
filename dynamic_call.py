@@ -30,6 +30,8 @@ def test_0():
     printName(car_0)
     printName(car_1)
 
+    car_2 = 1
+    printName(car_2)    # AttributeError: 'int' object has no attribute 'printName'
 
 if __name__ == '__main__':
     test_0()
